@@ -1,2 +1,5 @@
 # pinterest-clone-fcc
-pinterest clone for free code camp last project til last certificate
+
+- [ ] need to be pwa
+- [ ] need to learn about ux/ui
+- [ ] styled components probably?
