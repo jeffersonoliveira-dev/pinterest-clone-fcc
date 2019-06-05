@@ -1,0 +1,19 @@
+{
+  "name": "pinterest-clone-fcc",
+  "version": "1.0.0",
+  "description": "last project for the last certificate of free code camp ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cardbeat/pinterest-clone-fcc.git"
+  },
+  "author": "jefferson oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cardbeat/pinterest-clone-fcc/issues"
+  },
+  "homepage": "https://github.com/Cardbeat/pinterest-clone-fcc#readme"
+}
