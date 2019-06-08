@@ -4,3 +4,4 @@
 - [ ] need to learn about ux/ui
 - [ ] styled components probably?
 - [ ] learning about service workers
+- [ ] continuing learning pwa
