@@ -1,6 +1,3 @@
 # pinterest-clone-fcc
 
-- [ ] need to be pwa
-- [ ] need to learn about ux/ui
-- [x] styled components probably?
-- [ ] learning about service workers
+work in progress
