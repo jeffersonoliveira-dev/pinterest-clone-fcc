@@ -1,1 +1,1 @@
-- [x] react pwa
+-[x] react pwa -[ ] front page -[ ] login
