@@ -1,5 +1,3 @@
-import GuestRoutes from './pages/guest';
-import AuthRoutes from './pages/auth';
 import SplashScreen from './pages/splash';
 
 export default class Routes {
@@ -13,11 +11,7 @@ export default class Routes {
       title: 'ReactPWA',
     });
 
-    const routes = [
-      ...GuestRoutes,
-      ...AuthRoutes,
-      ...SplashScreen,
-    ];
+    const routes = [...SplashScreen];
 
     routeHandler.hooks.initRoutes.tapPromise('AppRoutes', async () => {
       routeHandler.addRoutes(routes);
