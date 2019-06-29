@@ -1,1 +1,5 @@
--[x] react pwa -[ ] front page -[ ] login
+-[x] react pwa
+-[ ] front page 
+-[ ] login
+-[ ] learn typescript
+-[ ] react lib for testing
