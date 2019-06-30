@@ -2,6 +2,6 @@
 
 work in progress
 
--[ ] change to ReactPWA
+-[x] change to ReactPWA maybe?
 -[ ] get validation working
 -[ ] make pages[ welcome, dashboard, profile ]
