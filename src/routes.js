@@ -1,4 +1,4 @@
-import SplashScreen from './pages/splash';
+import WelcomeScreen from './pages/welcome';
 
 export default class Routes {
   // eslint-disable-next-line
@@ -11,7 +11,7 @@ export default class Routes {
       title: 'ReactPWA',
     });
 
-    const routes = [...SplashScreen];
+    const routes = [...WelcomeScreen];
 
     routeHandler.hooks.initRoutes.tapPromise('AppRoutes', async () => {
       routeHandler.addRoutes(routes);
