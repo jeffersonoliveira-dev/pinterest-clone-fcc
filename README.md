@@ -1,5 +1,5 @@
 - [x] react pwa
-- [ ] react hooks
+- [x] react hooks
 - [ ] front page 
 - [ ] login
 - [ ] learn typescript
