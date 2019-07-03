@@ -1,6 +1,0 @@
-- [x] react pwa
-- [x] react hooks
-- [ ] front page 
-- [ ] login
-- [ ] learn typescript
-- [ ] react lib for testing
