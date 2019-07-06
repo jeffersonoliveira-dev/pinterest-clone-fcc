@@ -1,12 +1,14 @@
-import React from 'react';
-
+import React from "react";
+// get hooks to build up firebase api trough here
 
 const Login: React.FC = () => {
- return (
-  <p>this is login  page</p>
- )
+  return (
+    <div>
+      <form>
+        <p>tipical form here</p>
+      </form>
+    </div>
+  );
+};
 
-}
-
-
-export default Login
+export default Login;
