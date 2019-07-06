@@ -1,9 +1,10 @@
 import React from 'react';
+import Welcome from './components/welcome/welcome.tsx';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <p>this is the first page</p>
+      <Welcome />
     </div>
   );
 }
