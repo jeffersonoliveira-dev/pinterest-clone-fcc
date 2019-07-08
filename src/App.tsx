@@ -1,12 +1,13 @@
-import React from 'react';
-import Welcome from './components/welcome/welcome.tsx';
+import React from "react";
+import Welcome from "./components/welcome/welcome";
+import { Container } from "./App.styles";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Container>
       <Welcome />
-    </div>
+    </Container>
   );
-}
+};
 
 export default App;
