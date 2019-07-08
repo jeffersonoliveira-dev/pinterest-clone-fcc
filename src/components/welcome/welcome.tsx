@@ -1,12 +1,12 @@
-import React from 'react';
-
+import React from "react";
+import { Box } from "./welcome.styles";
 
 const Welcome: React.FC = () => {
- return (
-  <p>this is welcome page</p>
- )
+  return (
+    <Box>
+      <p> this is the welcome page</p>
+    </Box>
+  );
+};
 
-}
-
-
-export default Welcome
+export default Welcome;
