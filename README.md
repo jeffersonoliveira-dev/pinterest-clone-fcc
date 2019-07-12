@@ -2,7 +2,7 @@ Objective: Build a Glitch app that is functionally similar to this: https://wild
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 - [ ] As an unauthenticated user, I can login with GitHub.
   
-- [ ] As an authenticated user, I can link to images. [ doing ]
+- [ ] As an authenticated user, I can link to images.
   
 - [ ] As an authenticated user, I can delete images that I've linked to.
   
