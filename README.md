@@ -1,6 +1,6 @@
 Objective: Build a Glitch app that is functionally similar to this: https://wild-song.glitch.me.
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
-- [ ] As an unauthenticated user, I can login with GitHub.
+- [x] As an unauthenticated user, I can login with GitHub.
   
 - [ ] As an authenticated user, I can link to images.
   
