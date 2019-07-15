@@ -12,4 +12,3 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
   
 - [ ] As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
 
-correcting rounting and start to introduce hooks
