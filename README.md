@@ -1,6 +1,6 @@
 Objective: Build a Glitch app that is functionally similar to this: https://wild-song.glitch.me.
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
-- [x] As an unauthenticated user, I can login with GitHub.
+- [x] As an unauthenticated user, I can login with GitHub. 
   
 - [ ] As an authenticated user, I can link to images.
   
@@ -11,3 +11,5 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
 - [ ] As an unauthenticated user, I can browse other users' walls of images.
   
 - [ ] As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
+
+correcting rounting and start to introduce hooks
