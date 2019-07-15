@@ -1,19 +1,24 @@
 import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import firebase from "firebase";
+import * as firebase from "firebase";
 import Keys from "../../Keys";
 import { Container, NavBar, GithubAuth } from "./header.styles";
 
 const config = {
   apiKey: Keys.firebase,
-  authDomain: "project-140434701386.firebaseapp.com"
+  authDomain: "pinclonerest.firebaseapp.com",
+  databaseURL: "https://pinclonerest.firebaseio.com",
+  projectId: "pinclonerest",
+  storageBucket: "",
+  messagingSenderId: "140434701386",
+  appId: "1:140434701386:web:2a9f8fa32221d232"
 };
 firebase.initializeApp(config);
 
 const uiConfig = {
   signInFlow: "popup",
-  signInSuccessUrl: "/signedIn",
-  signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID]
+  signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
+  signInSuccessUrl: "/dashboard"
 };
 
 const Header: React.FC = () => {
