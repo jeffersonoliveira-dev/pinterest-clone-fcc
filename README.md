@@ -2,7 +2,7 @@ Objective: Build a Glitch app that is functionally similar to this: https://wild
 Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
 - [x] As an unauthenticated user, I can login with GitHub. 
   
-- [ ] As an authenticated user, I can link to images. [ firebase register ]
+- [ ] As an authenticated user, I can link to images.
   
 - [ ] As an authenticated user, I can delete images that I've linked to.
   
@@ -12,3 +12,13 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
   
 - [ ] As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
 
+
+
+// goals
+
+> learn hooks to change header when user sign in 
+> link auth account with firestore db
+> CRUD
+> dashboard
+> profile page
+> check image 
