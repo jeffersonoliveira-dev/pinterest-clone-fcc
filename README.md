@@ -16,7 +16,7 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
 
 // goals
 
-> learn hooks to change header when user sign in 
+> learn hooks to change header when user sign in [ useContext, useState ]
 > link auth account with firestore db
 > CRUD
 > dashboard
