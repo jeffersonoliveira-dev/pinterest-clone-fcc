@@ -16,7 +16,7 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
 
 // goals
 
-## moving to glitch? maybe
+## moved to glitch
 
 
 > learn hooks to change header when user sign in [ useContext, useState ]
