@@ -12,16 +12,3 @@ Fulfill the below user stories. Use whichever libraries or APIs you need. Give i
   
 - [ ] As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)
 
-
-
-// goals
-
-## moved to glitch
-
-
-> learn hooks to change header when user sign in [ useContext, useState ]
-> link auth account with firestore db
-> CRUD
-> dashboard
-> profile page
-> check image 
