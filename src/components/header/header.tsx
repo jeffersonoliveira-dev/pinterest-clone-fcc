@@ -21,6 +21,8 @@ const uiConfig = {
   signInSuccessUrl: "/dashboard"
 };
 
+// need to understand how collect data and create a ref to cloud
+
 const Header: React.FC = () => {
   return (
     <Container>
