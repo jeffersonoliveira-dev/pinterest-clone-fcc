@@ -15,15 +15,15 @@ const config = {
 };
 firebase.initializeApp(config);
 
-const uiConfig = {
-  signInFlow: "popup",
-  signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
-  signInSuccessUrl: "/dashboard"
-};
-
-// need to understand how collect data and create a ref to cloud
-
 const Header: React.FC = () => {
+  const uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
+    callbacks: {
+      signInSuccessWithAuthResult: () => false
+    }
+  };
+
   return (
     <Container>
       <NavBar>
