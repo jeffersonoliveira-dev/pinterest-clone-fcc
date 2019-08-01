@@ -1,11 +1,16 @@
-const INITIAL_STATE = { data: [] };
+const INITIAL_STATE = {
+  auth: false,
+  user: [],
+  token: ""
+};
 
 function rootReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case "ADD":
+    case "ADD_USER":
       return {
         ...state,
-        data: [...state.data, action.data]
+        auth: true,
+        user: [action.data]
       };
     default:
       return state;
