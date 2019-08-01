@@ -7,10 +7,12 @@ import Home from "./components/Home/Home";
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <Route path="/" exact component={Home} />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Route path="/" exact component={Home} />
+      </Router>
+    </Provider>
   );
 };
 
