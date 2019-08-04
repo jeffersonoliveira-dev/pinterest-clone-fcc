@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import styled from "styled-components";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,7 +24,7 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Fragment className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -40,6 +41,8 @@ export default function ButtonAppBar() {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-    </div>
+    </Fragment>
   );
 }
+
+// transpile to styled, get rid of fragment and apply firebaseui react component
