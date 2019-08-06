@@ -8,6 +8,7 @@ import firebase from "firebase";
 import database from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
+import ImageButton from "../ImageButton/ImageButton";
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1 },
@@ -74,7 +75,7 @@ export default function ButtonAppBar() {
             PC
           </Typography>
           {auth ? (
-            <p>bozo</p>
+            <ImageButton />
           ) : (
             <div className={classes.github}>
               <StyledFirebaseAuth
