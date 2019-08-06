@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import firebase from "firebase";
 import database from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
+
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1 },
   menuButton: { marginRight: theme.spacing(2) },
@@ -16,16 +18,19 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
+
+  const auth = useSelector(state => state.auth);
+
   const uiConfig = {
     signInFlow: "popup",
     signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
+    signInSuccessUrl: "/dashboard",
     callbacks: {
       signInSuccessWithAuthResult: (authResult, redirectUrl) => {
         let CheckDoc = database.collection("users").doc(authResult.user.uid);
         CheckDoc.get().then(doc => {
-          let auth = authResult.user.uid;
           if (doc.exists) {
             dispatch({
               type: "ADD_USER",
@@ -34,6 +39,7 @@ export default function ButtonAppBar() {
               token: authResult.user.uid
             });
             // router stuff
+            this.props.history.push("/dashboard");
           } else {
             let newUser = database.collection("users");
             let userData = {
@@ -51,6 +57,7 @@ export default function ButtonAppBar() {
                   token: authResult.user.uid
                 });
                 // route stuff
+                this.props.history.push("/dashboard");
               });
           }
         });
@@ -66,12 +73,16 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             PC
           </Typography>
-          <div className={classes.github}>
-            <StyledFirebaseAuth
-              uiConfig={uiConfig}
-              firebaseAuth={firebase.auth()}
-            />
-          </div>
+          {auth ? (
+            <p>bozo</p>
+          ) : (
+            <div className={classes.github}>
+              <StyledFirebaseAuth
+                uiConfig={uiConfig}
+                firebaseAuth={firebase.auth()}
+              />{" "}
+            </div>
+          )}
         </Toolbar>
       </AppBar>
     </div>
