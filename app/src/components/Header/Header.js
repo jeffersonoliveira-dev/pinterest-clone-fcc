@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import Typography from "@material-ui/core/Typography";
 import firebase from "firebase";
-import { Config } from "../../Keys";
+import database from "../../firebase";
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1 },
@@ -14,12 +14,27 @@ const useStyles = makeStyles(theme => ({
   github: { flexStart: "end" }
 }));
 
-firebase.initializeApp(Config);
-
 const uiConfig = {
   signInFlow: "popup",
   signInSuccessUrl: "/signedIn",
-  signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID]
+  signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
+  callbacks: {
+    signInSuccessWithAuthResult: (authResult, redirectUrl) => {
+      let CheckDoc = database.collection("users").doc(authResult.user.uid);
+      CheckDoc.get().then(doc => {
+        let auth = authResult.user.uid;
+        if (doc.exists) {
+          // push user to store
+        } else {
+          let newUser = database.collection("users");
+          let userData = {
+            // user config
+          };
+          // push new user to firestore
+        }
+      });
+    }
+  }
 };
 
 export default function ButtonAppBar() {
