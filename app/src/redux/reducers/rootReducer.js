@@ -1,6 +1,9 @@
 const INITIAL_STATE = {
   auth: false,
-  user: [],
+  user: {
+    name: "",
+    images: []
+  },
   token: ""
 };
 
@@ -10,7 +13,11 @@ function rootReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         auth: true,
-        user: [action.data]
+        user: {
+          name: action.name,
+          images: [action.images]
+        },
+        token: action.token
       };
     default:
       return state;
