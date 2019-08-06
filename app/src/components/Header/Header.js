@@ -16,10 +16,10 @@ const useStyles = makeStyles(theme => ({
 
 const uiConfig = {
   signInFlow: "popup",
-  signInSuccessUrl: "/signedIn",
   signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
   callbacks: {
     signInSuccessWithAuthResult: (authResult, redirectUrl) => {
+      console.log(authResult.user.uid);
       let CheckDoc = database.collection("users").doc(authResult.user.uid);
       CheckDoc.get().then(doc => {
         let auth = authResult.user.uid;
@@ -33,6 +33,7 @@ const uiConfig = {
           // push new user to firestore
         }
       });
+      return false;
     }
   }
 };
