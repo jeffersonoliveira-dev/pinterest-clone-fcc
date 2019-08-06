@@ -2,23 +2,25 @@ import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import styled from "styled-components";
+import firebase from "firebase";
+import { Config } from "../../Keys";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  title: {
-    flexGrow: 1
-  }
+  root: { flexGrow: 1 },
+  menuButton: { marginRight: theme.spacing(2) },
+  title: { flexGrow: 1 },
+  github: { flexStart: "end" }
 }));
+
+firebase.initializeApp(Config);
+
+const uiConfig = {
+  signInFlow: "popup",
+  signInSuccessUrl: "/signedIn",
+  signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID]
+};
 
 export default function ButtonAppBar() {
   const classes = useStyles();
@@ -27,22 +29,17 @@ export default function ButtonAppBar() {
     <Fragment className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            PC
           </Typography>
-          <Button color="inherit">Login</Button>
+          <div className={classes.github}>
+            <StyledFirebaseAuth
+              uiConfig={uiConfig}
+              firebaseAuth={firebase.auth()}
+            />
+          </div>
         </Toolbar>
       </AppBar>
     </Fragment>
   );
 }
-
-// transpile to styled, get rid of fragment and apply firebaseui react component
