@@ -8,7 +8,6 @@ import firebase from "firebase";
 import database from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
-import ImageButton from "../ImageButton/ImageButton";
 
 const useStyles = makeStyles(theme => ({
   root: { flexGrow: 1 },
@@ -67,6 +66,8 @@ const Header = withRouter(({ history }) => {
     }
   };
 
+  // require ID to create image and save on firestore [ crud needs ]
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -81,7 +82,7 @@ const Header = withRouter(({ history }) => {
               <StyledFirebaseAuth
                 uiConfig={uiConfig}
                 firebaseAuth={firebase.auth()}
-              />{" "}
+              />
             </div>
           )}
         </Toolbar>
