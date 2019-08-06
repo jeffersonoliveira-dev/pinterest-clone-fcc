@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   github: { flexStart: "end" }
 }));
 
-export default function ButtonAppBar() {
+const Header = withRouter(({ history }) => {
   const classes = useStyles();
 
   const dispatch = useDispatch();
@@ -39,8 +39,8 @@ export default function ButtonAppBar() {
               images: doc.data().images,
               token: authResult.user.uid
             });
+            history.push("/dashboard");
             // router stuff
-            this.props.history.push("/dashboard");
           } else {
             let newUser = database.collection("users");
             let userData = {
@@ -58,7 +58,7 @@ export default function ButtonAppBar() {
                   token: authResult.user.uid
                 });
                 // route stuff
-                this.props.history.push("/dashboard");
+                history.push("/dashboard");
               });
           }
         });
@@ -75,7 +75,7 @@ export default function ButtonAppBar() {
             PC
           </Typography>
           {auth ? (
-            <ImageButton />
+            <button onClick={() => history.push("/image")}>add pic</button>
           ) : (
             <div className={classes.github}>
               <StyledFirebaseAuth
@@ -88,4 +88,6 @@ export default function ButtonAppBar() {
       </AppBar>
     </div>
   );
-}
+});
+
+export default Header;

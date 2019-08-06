@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 
-// upload image and check if isnt broken , otherwise upload a placeholder image
-
-const ImageButton = () => {
+const ImageButton = props => {
+  const [modal, setModal] = useState(false);
   return (
-    <>
-      <p>this is a button </p>
-    </>
+    <section>
+      {modal ? (
+        <button> home</button>
+      ) : (
+        <button
+          onClick={() => {
+            console.log(props);
+          }}
+        >
+          add pic
+        </button>
+      )}
+    </section>
   );
 };
 
