@@ -6,6 +6,7 @@ import database from "../../firebase";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 `;
 
 const Form = styled.form`
@@ -17,8 +18,8 @@ const Form = styled.form`
   max-width: 800px;
   text-align: center;
   border: 1px solid #ddd;
-  padding-top: 0px;
-  padding-bottom: 90px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: black;
   background: white;
 `;
@@ -46,6 +47,7 @@ const Img = styled.img`
   height: 200px;
   width: 150px;
   margin: 0 auto;
+  padding: 10px;
 `;
 
 const Image = () => {
