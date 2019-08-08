@@ -1,10 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 
-// using masonry,js to display image like pinterest
-// https://github.com/tsuyoshiwada/react-stack-grid
+const Container = styled.div`
+  display: flex;
+`;
 
-const Dashboard = () => {
-  return <>this is the dashboard</>;
+const Dashboard = ({ text }) => {
+  return <Container>{text}</Container>;
 };
 
 export default Dashboard;

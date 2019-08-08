@@ -2,6 +2,8 @@
 
 exports[`render component  1`] = `
 <DocumentFragment>
-  this is the dashboard
+  <div
+    class="sc-bdVaJa kZAgjJ"
+  />
 </DocumentFragment>
 `;

@@ -52,6 +52,7 @@ const Img = styled.img`
 
 const Image = () => {
   const [image, setImage] = useState();
+
   return (
     <Container>
       <Form>
