@@ -34,9 +34,9 @@ const Header = withRouter(({ history }) => {
     signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
     signInSuccessUrl: "/dashboard",
     callbacks: {
-      signInSuccessWithAuthResult: (authResult, redirectUrl) => {
-        let CheckDoc = database.collection("users").doc(authResult.user.uid);
-        CheckDoc.get().then(doc => {
+      signInSuccessWithAuthResult: authResult => {
+        let user = database.collection("users").doc(authResult.user.uid);
+        user.get().then(doc => {
           if (doc.exists) {
             dispatch({
               type: "ADD_USER",
@@ -44,15 +44,12 @@ const Header = withRouter(({ history }) => {
               images: doc.data().images,
               token: authResult.user.uid
             });
-            history.push("/dashboard");
-            // router stuff
           } else {
-            let newUser = database.collection("users");
             let userData = {
               name: authResult.user.displayName,
               images: []
             };
-            newUser
+            user
               .doc(authResult.user.uid)
               .set(userData)
               .then(() => {
@@ -62,17 +59,14 @@ const Header = withRouter(({ history }) => {
                   images: doc.data().images,
                   token: authResult.user.uid
                 });
-                // route stuff
-                history.push("/dashboard");
               });
           }
+          return history.push("/dashboard");
         });
         return false;
       }
     }
   };
-
-  // require ID to create image and save on firestore [ crud needs ]
 
   return (
     <div className={classes.root}>
