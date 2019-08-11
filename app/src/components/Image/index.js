@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import firebase from "firebase";
 import database from "../../firebase";
@@ -52,10 +53,26 @@ const Img = styled.img`
 
 const Image = () => {
   const [image, setImage] = useState();
+  const token = useSelector(state => state.token);
+
+  const handleSubmit = e => {
+    // firebase connection with db
+    database
+      .collection("users")
+      .doc(token)
+      .get()
+      .then(doc => {
+        console.log(doc.data());
+        // add new data to doc.data().image
+      });
+
+    e.preventDefault();
+    return e;
+  };
 
   return (
     <Container>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Title> show your image </Title>
         <Img
           src={image}

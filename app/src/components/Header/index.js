@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -22,6 +22,12 @@ const Header = withRouter(({ history }) => {
   const dispatch = useDispatch();
 
   const auth = useSelector(state => state.auth);
+
+  useEffect(() => {
+    if (!auth) {
+      history.push("/");
+    }
+  });
 
   const uiConfig = {
     signInFlow: "popup",
