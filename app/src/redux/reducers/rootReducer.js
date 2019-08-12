@@ -7,6 +7,8 @@ const INITIAL_STATE = {
   token: ""
 };
 
+// changes
+
 function rootReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case "ADD_USER":
