@@ -6,6 +6,8 @@ import Header from "./components/Header/index";
 import Dashboard from "./components/Dashboard/index";
 import Image from "./components/Image/index";
 
+// testing
+
 const App = () => {
   return (
     <Provider store={store}>
