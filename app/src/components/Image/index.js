@@ -57,6 +57,8 @@ const Image = () => {
 
   const handleSubmit = e => {
     // firebase connection with db
+    // check image if is broken
+    // create image and push to firestore
     database
       .collection("users")
       .doc(token)

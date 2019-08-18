@@ -1,0 +1,317 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190811.235822.22224.0.001.json",
+    "dumpEventTime": "2019-08-11T23:58:22Z",
+    "dumpEventTimeStamp": "1565578702461",
+    "processId": 22224,
+    "cwd": "/home/jefferson/Documents/projects/pinterest-clone-fcc",
+    "commandLine": [
+      "/usr/bin/node",
+      "/home/jefferson/.config/coc/extensions/node_modules/coc-highlight/lib/server.js",
+      "--node-ipc",
+      "--node-ipc",
+      "--clientProcessId=22193"
+    ],
+    "nodejsVersion": "v11.15.0",
+    "glibcVersionRuntime": "2.29",
+    "glibcVersionCompiler": "2.29",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "11.15.0",
+      "v8": "7.0.276.38-node.19",
+      "uv": "1.30.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.36.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "5.2.7-arch1-1-ARCH",
+    "osVersion": "#1 SMP PREEMPT Wed Aug 7 02:00:26 UTC 2019",
+    "osMachine": "x86_64",
+    "host": "black-pearl"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000558bf3194a91",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, v8::Local<v8::String>) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf308529f",
+      "symbol": "node::OnFatalError(char const*, char const*) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf322b002",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf322b25b",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf35c2573",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf35d5af5",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf35a3418",
+      "symbol": "v8::internal::Factory::AllocateRawArray(int, v8::internal::PretenureFlag) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf35a3934",
+      "symbol": "v8::internal::Factory::NewFixedArrayWithFiller(v8::internal::Heap::RootListIndex, int, v8::internal::Object*, v8::internal::PretenureFlag) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf3569551",
+      "symbol": " [/usr/bin/node]"
+    },
+    {
+      "pc": "0x0000558bf37dca75",
+      "symbol": "v8::internal::Runtime_GrowArrayElements(int, v8::internal::Object**, v8::internal::Isolate*) [/usr/bin/node]"
+    },
+    {
+      "pc": "0x00000b2d20acfc5d",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1443135488,
+    "totalCommittedMemory": 1439412992,
+    "usedMemory": 1423819616,
+    "availableMemory": 87021400,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 42224,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 17408,
+        "capacity": 1031168,
+        "used": 0,
+        "available": 1031168
+      },
+      "old_space": {
+        "memorySize": 861605888,
+        "committedMemory": 859697904,
+        "capacity": 847241936,
+        "used": 845316232,
+        "available": 1925704
+      },
+      "code_space": {
+        "memorySize": 1048576,
+        "committedMemory": 792704,
+        "capacity": 674176,
+        "used": 674176,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 536576,
+        "committedMemory": 491168,
+        "capacity": 349760,
+        "used": 349760,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 578371584,
+        "committedMemory": 578371584,
+        "capacity": 661028392,
+        "used": 577445928,
+        "available": 83582464
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 19.5807,
+    "kernelCpuSeconds": 1.07468,
+    "cpuConsumptionPercent": 108.712,
+    "maxRss": 1618075648,
+    "pageFaults": {
+      "IORequired": 38,
+      "IONotRequired": 713432
+    },
+    "fsActivity": {
+      "reads": 5928,
+      "writes": 0
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 8.09444,
+    "kernelCpuSeconds": 0.757185,
+    "cpuConsumptionPercent": 46.5875,
+    "fsActivity": {
+      "reads": 5928,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "SHELL": "/usr/bin/zsh",
+    "XDG_SESSION_PATH": "/org/freedesktop/DisplayManager/Session0",
+    "I3SOCK": "/run/user/1000/i3/ipc-socket.850",
+    "FREETYPE_PROPERTIES": "truetype:interpreter-version=40",
+    "XDG_CONFIG_HOME": "/home/jefferson/.config",
+    "DESKTOP_SESSION": "i3",
+    "GTK_MODULES": "canberra-gtk-module",
+    "XDG_SEAT": "seat0",
+    "PWD": "/home/jefferson/Documents/projects/pinterest-clone-fcc/app",
+    "LOGNAME": "jefferson",
+    "XDG_SESSION_DESKTOP": "i3",
+    "QT_QPA_PLATFORMTHEME": "qt5ct",
+    "XDG_SESSION_TYPE": "x11",
+    "XAUTHORITY": "/home/jefferson/.Xauthority",
+    "DESKTOP_STARTUP_ID": "i3/kitty/850-10-black-pearl_TIME101994412",
+    "XDG_GREETER_DATA_DIR": "/var/lib/lightdm-data/jefferson",
+    "HOME": "/home/jefferson",
+    "LANG": "en_US.UTF-8",
+    "XDG_CURRENT_DESKTOP": "i3",
+    "XDG_SEAT_PATH": "/org/freedesktop/DisplayManager/Seat0",
+    "XDG_SESSION_CLASS": "user",
+    "USER": "jefferson",
+    "DISPLAY": ":0",
+    "SHLVL": "1",
+    "XDG_VTNR": "7",
+    "XDG_SESSION_ID": "2",
+    "MOZ_PLUGIN_PATH": "/usr/lib/mozilla/plugins",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "PATH": "/home/jefferson/.yarn/bin:/home/jefferson/.config/yarn/global/node_modules/.bin:/home/jefferson/.config/anaconda3/bin:/home/jefferson/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/sbin:/usr/sbin:/home/jefferson/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/home/jefferson/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/home/jefferson/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/home/jefferson/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/home/jefferson/.antigen/bundles/zsh-users/zsh-autosuggestions:/home/jefferson/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/home/jefferson/.fzf/bin",
+    "GDMSESSION": "i3",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "MAIL": "/var/spool/mail/jefferson",
+    "_": "/usr/bin/nvim",
+    "KITTY_WINDOW_ID": "1",
+    "WINDOWID": "54525963",
+    "TERM": "xterm-256color",
+    "COLORTERM": "truecolor",
+    "TERMINFO": "/usr/lib/kitty/terminfo",
+    "OLDPWD": "/home/jefferson",
+    "ZSH": "/home/jefferson/.oh-my-zsh",
+    "PAGER": "less",
+    "LESS": "-R",
+    "LC_CTYPE": "en_US.UTF-8",
+    "LSCOLORS": "Gxfxcxdxbxegedabagacad",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "CONDA_SHLVL": "1",
+    "CONDA_DEFAULT_ENV": "base",
+    "CONDA_EXE": "/home/jefferson/.config/anaconda3/bin/conda",
+    "CONDA_PREFIX": "/home/jefferson/.config/anaconda3",
+    "CONDA_PROMPT_MODIFIER": "",
+    "CONDA_PYTHON_EXE": "/home/jefferson/.config/anaconda3/bin/python",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "VIMRUNTIME": "/usr/share/nvim/runtime",
+    "NVIM_LISTEN_ADDRESS": "/tmp/nvimopUenk/0",
+    "MYVIMRC": "/home/jefferson/.config/nvim/init.vim",
+    "VIMCONFIG": "/home/jefferson/.config/nvim"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 524288,
+      "hard": 524288
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 31583,
+      "hard": 31583
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/usr/lib/libz.so.1",
+    "/usr/lib/libuv.so.1",
+    "/usr/lib/libcares.so.2",
+    "/usr/lib/libnghttp2.so.14",
+    "/usr/lib/libcrypto.so.1.1",
+    "/usr/lib/libssl.so.1.1",
+    "/usr/lib/libicui18n.so.64",
+    "/usr/lib/libicuuc.so.64",
+    "/usr/lib/libdl.so.2",
+    "/usr/lib/librt.so.1",
+    "/usr/lib/libstdc++.so.6",
+    "/usr/lib/libm.so.6",
+    "/usr/lib/libgcc_s.so.1",
+    "/usr/lib/libpthread.so.0",
+    "/usr/lib/libc.so.6",
+    "/usr/lib/libnsl.so.2",
+    "/usr/lib/libicudata.so.64",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/usr/lib/libtirpc.so.3",
+    "/usr/lib/libgssapi_krb5.so.2",
+    "/usr/lib/libkrb5.so.3",
+    "/usr/lib/libk5crypto.so.3",
+    "/usr/lib/libcom_err.so.2",
+    "/usr/lib/libkrb5support.so.0",
+    "/usr/lib/libkeyutils.so.1",
+    "/usr/lib/libresolv.so.2"
+  ]
+}
