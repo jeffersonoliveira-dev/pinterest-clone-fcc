@@ -7,6 +7,7 @@ const Container = styled.div`
 `;
 
 const Dashboard = () => {
+  // going to redux? maybe
   useEffect(() => {
     // firebase code here
     database

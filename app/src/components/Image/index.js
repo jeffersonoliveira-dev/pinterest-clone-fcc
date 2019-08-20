@@ -68,6 +68,9 @@ const Image = () => {
       });
 
     e.preventDefault();
+    e.target.preview.src = '';
+    e.target.description.value = '';
+    e.target.link.value = '';
     return e;
   };
 
