@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import styled from "styled-components";
-import firebase from "firebase";
-import database from "../../firebase";
+import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
+import styled from 'styled-components';
+import firebase from 'firebase';
+import database from '../../firebase';
 
 const Container = styled.div`
   display: flex;
@@ -56,16 +56,15 @@ const Image = () => {
   const token = useSelector(state => state.token);
 
   const handleSubmit = e => {
-    // firebase connection with db
-    // check image if is broken
-    // create image and push to firestore
+    let newImage = {
+      link: e.target.preview.src,
+      description: e.target.description.value,
+    };
     database
-      .collection("users")
+      .collection('users')
       .doc(token)
-      .get()
-      .then(doc => {
-        console.log(doc.data());
-        // add new data to doc.data().image
+      .update({
+        images: firebase.firestore.FieldValue.arrayUnion(newImage),
       });
 
     e.preventDefault();
@@ -78,9 +77,10 @@ const Image = () => {
         <Title> show your image </Title>
         <Img
           src={image}
+          name="preview"
           alt=""
           onError={e => {
-            e.target.src = "http://e.lvme.me/bb5srs1.jpg";
+            e.target.src = 'http://e.lvme.me/bb5srs1.jpg';
           }}
         />
         <Input
