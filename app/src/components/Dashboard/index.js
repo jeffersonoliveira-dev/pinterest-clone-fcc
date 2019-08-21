@@ -1,26 +1,7 @@
-import React, {useEffect} from 'react';
-import styled from 'styled-components';
-import database from '../../firebase';
+import React from 'react';
 
-const Container = styled.div`
-  display: flex;
-`;
+// import { Container } from './styles';
 
-const Dashboard = () => {
-  // going to redux? maybe
-  useEffect(() => {
-    // firebase code here
-    database
-      .collection('users')
-      .get()
-      .then(snapshot => {
-        snapshot.docs.map(doc => {
-          console.log(doc.data());
-          // display image
-        });
-      });
-  }, []);
-  return <Container>hello</Container>;
-};
-
-export default Dashboard;
+export default function Dashboard() {
+  return <div />;
+}

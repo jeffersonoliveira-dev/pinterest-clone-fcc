@@ -78,7 +78,7 @@ const Header = withRouter(({history}) => {
           {auth ? (
             <>
               <button onClick={() => history.push('/image')}>add pic</button>
-              <button onClick={() => history.push('/images')}>add pic</button>
+              <button onClick={() => history.push('/images')}>my images</button>
             </>
           ) : (
             <div className={classes.github}>
