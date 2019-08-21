@@ -3,6 +3,8 @@ import {useSelector} from 'react-redux';
 import styled from 'styled-components';
 import firebase from 'firebase';
 import database from '../../firebase';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const Container = styled.div`
   display: flex;
@@ -65,17 +67,22 @@ const Image = () => {
       .doc(token)
       .update({
         images: firebase.firestore.FieldValue.arrayUnion(newImage),
-      });
+      })
+      .then(() => notify());
 
     e.preventDefault();
     e.target.preview.src = '';
     e.target.description.value = '';
     e.target.link.value = '';
     return e;
+    // push notification
   };
+
+  const notify = () => toast('image uploaded!', {type: toast.TYPE.INFO});
 
   return (
     <Container>
+      <ToastContainer />
       <Form onSubmit={handleSubmit}>
         <Title> show your image </Title>
         <Img
