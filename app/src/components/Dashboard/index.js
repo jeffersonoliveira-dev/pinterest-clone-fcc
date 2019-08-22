@@ -1,7 +1,18 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import {useSelector} from 'react-redux';
+import Grid from '../Grid';
+import styled from 'styled-components';
 
 export default function Dashboard() {
-  return <div />;
+  const data = useSelector(state => state.data);
+
+  console.log(data);
+
+  const cards = data.map(user => {
+    let imgs = [];
+    user.images.map(item => imgs.push(item));
+    return <Grid images={imgs} />;
+  });
+
+  return <>{cards}</>;
 }
