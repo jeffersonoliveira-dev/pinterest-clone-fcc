@@ -111,4 +111,4 @@ const Header = withRouter(({history}) => {
   );
 });
 
-export default Header;
+export default withRouter(Header);
