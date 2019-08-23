@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import StackGrid from 'react-stack-grid';
+import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
-import {withSize} from 'react-sizeme';
 
 // import { Container } from './styles';
 
@@ -39,24 +39,35 @@ const Overlay = styled.div`
   }
 `;
 
-const Test = styled.h1`
+const OverlayContainer = styled.h1`
   color: white;
 `;
 
-function Grid({images, size}) {
-  const [hovered, setHovered] = useState(false);
-  const toggleHover = () => setHovered(!hovered);
+// fork between edit if user auth or just showing link to profile image wall
+// I have to read react router docs to get info about url or history
 
+function Grid(props) {
+  const path = props.location.pathname;
+  // just some if / else to realocate to profile link/ exclude button
+  // need token from image
+  // props.history.push('path', {state})
+  const content = () => {
+    if (path === '/') {
+      return <h6>profile link</h6>;
+    } else if (path === '/images') {
+      return <h6>button to delete</h6>;
+    }
+  };
   return (
     <UI>
       <StackGrid monitorImagesLoaded={true} columnWidth={300}>
-        {images.map((image, index) => {
+        {props.images.map((image, index) => {
           return (
             <>
               <Card key={index}>
                 <Img src={image.link} />
                 <Overlay>
-                  <Test>ola</Test>
+                  <OverlayContainer>{content()}</OverlayContainer>
                 </Overlay>
               </Card>
             </>
@@ -67,4 +78,4 @@ function Grid({images, size}) {
   );
 }
 
-export default withSize()(Grid);
+export default withRouter(Grid);
