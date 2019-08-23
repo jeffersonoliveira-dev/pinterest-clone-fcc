@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard/index';
 import Image from './components/Image/index';
 import Images from './components/Images/index';
 import GlobalStyle from './components/GlobalStyle';
+import Profile from './components/Profile/index';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/image" component={Image} />
         <Route path="/images" component={Images} />
+        <Route path="/:id" component={Profile} />
         <GlobalStyle />
       </Router>
     </Provider>
