@@ -3,6 +3,7 @@ import StackGrid from 'react-stack-grid';
 import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 import DeleteButton from './DeleteButton';
+import ProfileLink from './ProfileLink';
 
 // import { Container } from './styles';
 
@@ -32,11 +33,10 @@ const Overlay = styled.div`
   width: 300px;
   height: 100%;
   display: block;
-  background-color: black;
   z-index: 1;
   opacity: 0;
   &:hover {
-    opacity: 0.4;
+    opacity: 1;
   }
 `;
 
@@ -54,7 +54,7 @@ function Grid(props) {
   // props.history.push('path', {state})
   const content = () => {
     if (path === '/' || path === '/dashboard') {
-      return <h6>profile link</h6>;
+      return <ProfileLink />;
     } else if (path === '/images') {
       return <DeleteButton />;
     }
