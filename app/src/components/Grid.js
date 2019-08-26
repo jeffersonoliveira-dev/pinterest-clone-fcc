@@ -2,6 +2,7 @@ import React from 'react';
 import StackGrid from 'react-stack-grid';
 import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
+import DeleteButton from './DeleteButton';
 
 // import { Container } from './styles';
 
@@ -52,10 +53,10 @@ function Grid(props) {
   // need token from image
   // props.history.push('path', {state})
   const content = () => {
-    if (path === '/') {
+    if (path === '/' || path === '/dashboard') {
       return <h6>profile link</h6>;
     } else if (path === '/images') {
-      return <h6>button to delete</h6>;
+      return <DeleteButton />;
     }
   };
   return (

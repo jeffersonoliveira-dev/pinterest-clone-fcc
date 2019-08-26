@@ -18,7 +18,7 @@ const App = () => {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/image" component={Image} />
         <Route path="/images" component={Images} />
-        <Route path="/:id" component={Profile} />
+        <Route path="/profile/:id" component={Profile} />
         <GlobalStyle />
       </Router>
     </Provider>
