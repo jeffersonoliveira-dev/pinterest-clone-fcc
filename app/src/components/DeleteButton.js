@@ -1,7 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
-// import { Container } from './styles';
+const Container = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const Button = styled.button`
+  position: relative;
+  top: 100%;
+`;
 
 export default function DeleteButton(props) {
-  return <h6>this is a button </h6>;
+  return (
+    <Container>
+      <Button>remove</Button>
+    </Container>
+  );
 }

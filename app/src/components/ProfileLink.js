@@ -13,13 +13,15 @@ const Button = styled.button`
   opacity: 1;
   z-index: 3;
   text-align: center;
+  position: absolute;
+  bottom: 10px;
 `;
 
-export default function ProfileLink() {
+export default function ProfileLink({name, token}) {
   return (
     <Container>
       <Button>
-        <Link to="/profile/bozo">profile</Link>
+        <Link to={`/profile/${token}`}>{name}</Link>
       </Button>
     </Container>
   );

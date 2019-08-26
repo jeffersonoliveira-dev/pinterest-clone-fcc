@@ -49,12 +49,13 @@ const OverlayContainer = styled.h1`
 
 function Grid(props) {
   const path = props.location.pathname;
-  // just some if / else to realocate to profile link/ exclude button
-  // need token from image
   // props.history.push('path', {state})
+  const name = props.user.name;
+  const token = props.user.images[0].token;
+
   const content = () => {
     if (path === '/' || path === '/dashboard') {
-      return <ProfileLink />;
+      return <ProfileLink name={name} token={token} />;
     } else if (path === '/images') {
       return <DeleteButton />;
     }
@@ -64,14 +65,12 @@ function Grid(props) {
       <StackGrid monitorImagesLoaded={true} columnWidth={300}>
         {props.images.map((image, index) => {
           return (
-            <>
-              <Card key={index}>
-                <Img src={image.link} />
-                <Overlay>
-                  <OverlayContainer>{content()}</OverlayContainer>
-                </Overlay>
-              </Card>
-            </>
+            <Card key={index}>
+              <Img src={image.link} />
+              <Overlay>
+                <OverlayContainer>{content()}</OverlayContainer>
+              </Overlay>
+            </Card>
           );
         })}
       </StackGrid>

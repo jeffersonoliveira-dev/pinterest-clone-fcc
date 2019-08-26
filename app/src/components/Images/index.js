@@ -4,9 +4,6 @@ import Grid from '../Grid';
 
 export default function Images() {
   const cards = useSelector(state => state.user.images);
-  return (
-    <>
-      <Grid images={cards} />
-    </>
-  );
+  const user = useSelector(state => state.user);
+  return <Grid images={cards} user={user} />;
 }

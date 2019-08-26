@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react';
+import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -90,12 +92,24 @@ const Header = withRouter(({history}) => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            PC
+            <Link to={auth ? '/dashboard' : '/'}>PC</Link>
           </Typography>
           {auth ? (
             <>
-              <button onClick={() => history.push('/image')}>add pic</button>
-              <button onClick={() => history.push('/images')}>my images</button>
+              <div>
+                <Button color="inherit">
+                  <Button color="inherit">
+                    <Link to="/image">add</Link>
+                  </Button>
+                </Button>
+              </div>
+              <div>
+                <Button color="inherit">
+                  <Button color="inherit">
+                    <Link to="/images">images</Link>
+                  </Button>
+                </Button>
+              </div>
             </>
           ) : (
             <div className={classes.github}>

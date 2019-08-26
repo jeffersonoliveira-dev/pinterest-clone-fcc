@@ -58,7 +58,9 @@ const Image = () => {
   const token = useSelector(state => state.token);
 
   const handleSubmit = e => {
+    e.preventDefault();
     let newImage = {
+      token,
       link: e.target.preview.src,
       description: e.target.description.value,
     };
@@ -70,7 +72,6 @@ const Image = () => {
       })
       .then(() => notify());
 
-    e.preventDefault();
     e.target.preview.src = '';
     e.target.description.value = '';
     e.target.link.value = '';
