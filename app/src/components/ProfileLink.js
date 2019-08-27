@@ -7,19 +7,31 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const Button = styled.button`
+const Button = styled.div`
   opacity: 1;
   z-index: 3;
   text-align: center;
   position: absolute;
-  bottom: 10px;
+  bottom: 15%;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  text-align: center;
+  padding: 5px;
+  &:hover {
+    background-color: skyblue;
+    color: black;
+  }
 `;
 
 export default function ProfileLink({name, token}) {
   return (
     <Container>
       <Button>
-        <Link to={`/profile/${token}`}>{name}</Link>
+        <StyledLink to={`/profile/${token}`}>{name}</StyledLink>
       </Button>
     </Container>
   );

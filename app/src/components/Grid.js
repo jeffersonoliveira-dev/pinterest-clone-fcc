@@ -11,6 +11,7 @@ const Img = styled.img`
   width: 300px;
   height: auto;
   z-index: -1;
+  border-radius: 5%;
 `;
 
 const UI = styled.div`

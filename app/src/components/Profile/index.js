@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import database, {fetchUser} from '../../firebase';
+import {fetchUser} from '../../firebase';
 import Grid from '../Grid';
 
 export default function Profile({match}) {

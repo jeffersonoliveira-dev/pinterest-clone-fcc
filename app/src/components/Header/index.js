@@ -10,6 +10,12 @@ import firebase from 'firebase';
 import database from '../../firebase';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+`;
 
 const useStyles = makeStyles(theme => ({
   root: {flexGrow: 1},
@@ -75,21 +81,21 @@ const Header = withRouter(({history}) => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to={auth ? '/dashboard' : '/'}>PC</Link>
+            <StyledLink to={auth ? '/dashboard' : '/'}>PC</StyledLink>
           </Typography>
           {auth ? (
             <>
               <div>
                 <Button color="inherit">
                   <Button color="inherit">
-                    <Link to="/image">add</Link>
+                    <StyledLink to="/image">add</StyledLink>
                   </Button>
                 </Button>
               </div>
               <div>
                 <Button color="inherit">
                   <Button color="inherit">
-                    <Link to="/images">images</Link>
+                    <StyledLink to="/images">images</StyledLink>
                   </Button>
                 </Button>
               </div>
