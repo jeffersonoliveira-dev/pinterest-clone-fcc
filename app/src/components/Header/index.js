@@ -29,24 +29,7 @@ const Header = withRouter(({history}) => {
     if (!auth) {
       history.push('/');
     }
-    const fetchData = async () => {
-      let data = [];
-      database
-        .collection('users')
-        .get()
-        .then(snapshot => {
-          snapshot.docs.forEach(doc => {
-            data.push(doc.data());
-          });
-          console.log(data);
-          dispatch({
-            type: 'ADD_DATA',
-            data: data,
-          });
-        });
-    };
-    fetchData();
-  }, [auth, dispatch, history]);
+  }, [auth, history]);
 
   const uiConfig = {
     signInFlow: 'popup',

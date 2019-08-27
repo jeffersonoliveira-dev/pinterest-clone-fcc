@@ -8,7 +8,8 @@ import Image from './components/Image/index';
 import Images from './components/Images/index';
 import GlobalStyle from './components/GlobalStyle';
 import Profile from './components/Profile/index';
-
+import {toast} from 'react-toastify';
+toast.configure();
 const App = () => {
   return (
     <Provider store={store}>

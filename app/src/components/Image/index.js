@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import styled from 'styled-components';
 import firebase from 'firebase';
-import database from '../../firebase';
-import {toast, ToastContainer} from 'react-toastify';
+import database, {fetchData, fetchUserImages} from '../../firebase';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 const Container = styled.div`
@@ -56,6 +56,7 @@ const Img = styled.img`
 const Image = () => {
   const [image, setImage] = useState();
   const token = useSelector(state => state.token);
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -70,20 +71,31 @@ const Image = () => {
       .update({
         images: firebase.firestore.FieldValue.arrayUnion(newImage),
       })
-      .then(() => notify());
+      .then(() => {
+        notify();
+        let newData = fetchData();
+        dispatch({
+          type: 'ADD_DATA',
+          data: newData,
+        });
+        fetchUserImages(token).then(doc => {
+          dispatch({
+            type: 'UPDATE_IMAGES',
+            data: doc,
+          });
+        });
+      });
 
     e.target.preview.src = '';
     e.target.description.value = '';
     e.target.link.value = '';
     return e;
-    // push notification
   };
 
   const notify = () => toast('image uploaded!', {type: toast.TYPE.INFO});
 
   return (
     <Container>
-      <ToastContainer />
       <Form onSubmit={handleSubmit}>
         <Title> show your image </Title>
         <Img

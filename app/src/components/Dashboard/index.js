@@ -1,16 +1,31 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, {useEffect, useState} from 'react';
 import Grid from '../Grid';
-import styled from 'styled-components';
+import {fetchData} from '../../firebase';
 
 export default function Dashboard() {
-  const data = useSelector(state => state.data);
-  const cards = data.map((user, index) => {
-    console.log(user);
-    let imgs = [];
-    user.images.map(item => imgs.push(item));
-    return <Grid key={index} images={imgs} user={user} />;
-  });
+  const [Doc, setDoc] = useState(false);
 
-  return <>{cards}</>;
+  useEffect(() => {
+    fetchData().then(doc => setDoc(doc));
+  }, []);
+
+  return (
+    <>
+      {Doc ? (
+        Doc.map((user, index) => {
+          console.log(user.data.name);
+          return (
+            <Grid
+              key={index}
+              name={user.data.name}
+              token={user.id}
+              images={user.data.images}
+            />
+          );
+        })
+      ) : (
+        <h6>loading</h6>
+      )}
+    </>
+  );
 }

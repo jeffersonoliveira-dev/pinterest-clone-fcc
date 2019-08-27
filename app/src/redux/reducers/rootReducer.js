@@ -4,11 +4,9 @@ const INITIAL_STATE = {
     name: '',
     images: [],
   },
-  token: '',
-  data: [],
+  token: false,
+  data: false,
 };
-
-// changes
 
 function rootReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -26,6 +24,13 @@ function rootReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         data: action.data,
+      };
+    case 'UPDATE_IMAGES':
+      return {
+        ...state,
+        user: {
+          images: action.data,
+        },
       };
     default:
       return state;

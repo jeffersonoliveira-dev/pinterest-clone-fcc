@@ -40,24 +40,16 @@ const Overlay = styled.div`
   }
 `;
 
-const OverlayContainer = styled.h1`
-  color: white;
-`;
-
-// fork between edit if user auth or just showing link to profile image wall
-// I have to read react router docs to get info about url or history
-
 function Grid(props) {
   const path = props.location.pathname;
-  // props.history.push('path', {state})
-  const name = props.user.name;
-  const token = props.user.images[0].token;
+  const name = props.name;
+  const token = props.token;
 
-  const content = () => {
+  const content = data => {
     if (path === '/' || path === '/dashboard') {
       return <ProfileLink name={name} token={token} />;
     } else if (path === '/images') {
-      return <DeleteButton />;
+      return <DeleteButton image={data} />;
     }
   };
   return (
@@ -67,9 +59,7 @@ function Grid(props) {
           return (
             <Card key={index}>
               <Img src={image.link} />
-              <Overlay>
-                <OverlayContainer>{content()}</OverlayContainer>
-              </Overlay>
+              <Overlay>{content(image)}</Overlay>
             </Card>
           );
         })}
