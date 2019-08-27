@@ -1,6 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import Grid from '../Grid';
 import {fetchData} from '../../firebase';
+import ReactLoading from 'react-loading';
+import styled from 'styled-components';
+
+const LoadingContainer = styled.div`
+  width: 50%;
+  margin: 0 auto
+  padding: 20px
+`;
 
 export default function Dashboard() {
   const [Doc, setDoc] = useState(false);
@@ -24,7 +32,9 @@ export default function Dashboard() {
           );
         })
       ) : (
-        <h6>loading</h6>
+        <LoadingContainer>
+          <ReactLoading type={'spin'} height={'10%'} width={'10%'} />
+        </LoadingContainer>
       )}
     </>
   );

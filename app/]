@@ -6,21 +6,24 @@ import {useSelector, useDispatch} from 'react-redux';
 import {toast} from 'react-toastify';
 
 const Container = styled.div`
-  position: absolute;
-  left: 50%
-  top: 50%
-  transform: translate(-50%, -50%)
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
+    position: absolute;
+  bottom: 15%;
+`;
+
+const StyledLink = styled(Link)`
   color: white;
   background-color: blue;
-  border-radius: 5px;
-  padding: 10px;
+  text-align: center;
+  padding: 5px;
   &:hover {
     background-color: skyblue;
     color: black;
-    cursor: pointer;
   }
 `;
 

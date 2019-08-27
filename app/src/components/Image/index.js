@@ -20,41 +20,38 @@ const Form = styled.form`
   min-width: 400px;
   max-width: 800px;
   text-align: center;
-  border: 1px solid #ddd;
   padding-top: 20px;
   padding-bottom: 20px;
   color: black;
-  background: white;
-`;
-
-const Title = styled.h2`
-  margin-top: 40px;
-  margin-bottom: 70px;
-  font-size: 1.5em;
-  color: black;
-  background-color: white;
 `;
 
 const Button = styled.input`
   font-size: 1.5em;
   background-color: black;
+  position: relative;
+  top: 5px
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: skyblue;
   color: white;
 `;
 
 const Input = styled.input`
   font-size: 1.45em;
-  border: 1px solid #ddd;
+  margin: 5px;
 `;
 
 const Img = styled.img`
-  height: 200px;
-  width: 150px;
+  max-height: 200px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 10px;
 `;
 
 const Image = () => {
   const [image, setImage] = useState();
+  const [Enable, setEnable] = useState(true);
   const token = useSelector(state => state.token);
   const dispatch = useDispatch();
 
@@ -86,9 +83,10 @@ const Image = () => {
         });
       });
 
-    e.target.preview.src = '';
+    e.target.preview.src = null;
     e.target.description.value = '';
     e.target.link.value = '';
+    setEnable(false);
     return e;
   };
 
@@ -97,23 +95,29 @@ const Image = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Title> show your image </Title>
+        <Input
+          type="text"
+          name="link"
+          placeholder="image url"
+          onChange={e => {
+            if (e.target.value !== '') {
+              setEnable(true);
+              setImage(e.target.value);
+            }
+          }}
+        />
+        <Input type="text" name="description" placeholder="description" />
+        <Button type="submit" value="upload" />
         <Img
           src={image}
           name="preview"
           alt=""
           onError={e => {
-            e.target.src = 'http://e.lvme.me/bb5srs1.jpg';
+            if (Enable) {
+              e.target.src = 'http://e.lvme.me/bb5srs1.jpg';
+            }
           }}
         />
-        <Input
-          type="text"
-          name="link"
-          placeholder="image url"
-          onChange={e => setImage(e.target.value)}
-        />
-        <Input type="text" name="description" placeholder="description" />
-        <Button type="submit" value="save" />
       </Form>
     </Container>
   );
